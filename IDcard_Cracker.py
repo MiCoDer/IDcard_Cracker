@@ -1,6 +1,6 @@
 import string
 
-#===Auth functoin by http://mrcjtech.blogspot.com/2017/09/python.html===
+#===Auth function by http://mrcjtech.blogspot.com/2017/09/python.html===
 # create alphabet for 1st char of ID
 alphabet = list(string.ascii_uppercase[0:8])
 alphabet.extend(list(string.ascii_uppercase[9:]))
