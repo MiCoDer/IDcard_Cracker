@@ -1,13 +1,7 @@
 import string
 
-#===Auth function by http://mrcjtech.blogspot.com/2017/09/python.html===
-# create alphabet for 1st char of ID
-alphabet = list(string.ascii_uppercase[0:8])
-alphabet.extend(list(string.ascii_uppercase[9:]))
-code = list(range(10,33))
-
-# create the location mapping code for char of ID
-locationCode = dict(zip(alphabet,code))
+#===Function modified by http://mrcjtech.blogspot.com/2017/09/python.html===
+locationCode = {'A':10,'B':11,'C':12,'D':13,'E':14,'F':15,'G':16,'H':17,'I':34,'J':18,'K':19,'L':20,'M':21,'N':22,'O':35,'P':23,'Q':24,'R':25,'S':26,'T':27,'U':28,'V':29,'W':32,'X':30,'Y':31,'Z':33};
 
 def check(id):
 	if(len(id) != 10 or not(id[0].isalpha()) or not(id[1:].isdigit() or int[id[1] > 2 or id[1] < 1])):
