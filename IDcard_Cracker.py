@@ -17,16 +17,11 @@ def check(id):
     # Calculate the checksum of ID
 	para = 9
 	for n in encodeID[1:]:
-		if para == 0:
-			para = 1
+		para = [para,1][para==0] 
 		checkSum += int(n)*para
 		para -= 1
-
     # Check the checksum
-	if checkSum % 10 == 0:
-		return True
-	else:
-		return False
+	return [True,False][checkSum % 10 != 0]
 
 ID=input("輸入身份證(A123??6789):")
 digit=ID.count('?')
