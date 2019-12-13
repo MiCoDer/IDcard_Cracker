@@ -1,6 +1,7 @@
 import string
+import math
+import readline
 
-#===Function modified by http://mrcjtech.blogspot.com/2017/09/python.html===
 locationCode = {'A':10,'B':11,'C':12,'D':13,'E':14,'F':15,'G':16,'H':17,'I':34,\
 		'J':18,'K':19,'L':20,'M':21,'N':22,'O':35,'P':23,'Q':24,'R':25,\
 		'S':26,'T':27,'U':28,'V':29,'W':32,'X':30,'Y':31,'Z':33};
@@ -26,10 +27,13 @@ def check(id):
 		return True
 	else:
 		return False
-#===Mico===
+
 ID=input("輸入身份證(A123??6789):")
-for i in range(0,100):
-	tmpID=""
-	tmpID=ID.replace("??",str(i).zfill(2))
+digit=ID.count('?')
+poss = 0
+for i in range(0,int(math.pow(10,digit))):
+	tmpID=ID.replace("?"*digit,str(i).zfill(digit))
 	if(check(tmpID)):	
+		poss+=1
 		print(tmpID)
+print('\n共有 %s 種可能' % poss)
